@@ -1,0 +1,20 @@
+
+
+
+
+<div class="login-page">
+    <div class="form">
+        <div class="text-center">
+            <img class="m-b-10" src="assets/assets/images/logo-blue.png" alt="logo.png">
+          
+        </div>
+        <br>
+     
+      <form class="login-form">
+        <input type="text" [(ngModel)]="user_name"  name="user_name" class="form-control"  placeholder="user_name" />
+        <input type="password" [(ngModel)]="password"  name="password" class="form-control" placeholder="password"/>
+        <button   (click) ="login_manual()">login</button>
+        <p class="message">Power by Toh <a href="#">1.0</a></p>
+      </form>
+    </div>
+  </div>

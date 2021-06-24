@@ -1,0 +1,357 @@
+<div class="pcoded-content">
+    <div class="pcoded-inner-content">
+        <!-- Main-body start -->
+        <div class="main-body">
+            <div class="page-wrapper">
+                <!-- Page-header start -->
+                <div class="page-header">
+                    <div class="row align-items-end">
+                        <div class="col-lg-8">
+                            <div class="page-header-title">
+                                <div class="d-inline">
+                                    <h4>Apple Leave</h4>
+                                    <span><code>E-Leave</code>, for all staff</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="page-header-breadcrumb">
+                                <ul class="breadcrumb-title">
+                                    <li class="breadcrumb-item">
+                                        <a href="index.html"> <i class="feather icon-home"></i> </a>
+                                    </li>
+                                    <li class="breadcrumb-item"><a href="#!">E-Leave Form</a>
+                                    </li>
+                                    <li class="breadcrumb-item"><a href="#!">Apply Leave</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="card borderless-card">
+                    <div class="card-block primary-breadcrumb">    
+                            <span>Your still have Block Leave</span>
+                    </div>
+                </div>
+                <div class="card borderless-card">
+                    <div class="card-block inverse-breadcrumb">
+                            <span>your have Leave forward  form last year about "amount" Please use before end of March</span>       
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-block warning-breadcrumb">
+                        <span>your have  Extra Leave who working over 3 year will extra Leave</span>
+                    </div>
+                </div> -->
+                <!-- Page-header end -->
+                <div class="page-body">
+                    <div class="row">
+
+                        <div class="col-xl-8 col-md-12">
+
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4>Applications From</h4>
+                                    <div class="text-right">
+                                        <h4 class="sub-title">   <button  class="btn btn-success btn-round center" (click)="reset()" >reset</button></h4>
+                                    </div>
+                                </div>
+       
+                                    <div class="col-xl-12 col-md-12">
+                                        <div class="row">
+                                            <div class="col-xl-12 col-xl-12 m-b-30 container">
+                                                <h4 class="sub-title">ປ້ອນຂໍ້ມູນຂອງເຈົ້າ / INPUT YOUR INFORMATION</h4>
+
+                                                <input class="form-control form-control-lg" type="text"  
+                                                placeholder="Your Name " value={{name}}  disabled  />
+                                                <br/>
+                                                <input class="form-control form-control-lg" type="text" 
+                                                placeholder="staff_email" value={{email}}  disabled />
+                                                <br/>
+                                                <input class="form-control form-control-lg" type="text" 
+                                                placeholder="Your Staff ID" value={{staff_number}}  disabled />
+                                                <br/>
+                                                <h4 class="sub-title">ເລືອກປະເພດການລາພັກ / Select leave type</h4>
+                                                <select  [(ngModel)]="form_leave_select"  class="form-control"  >
+                                                    <!-- <option selected value="">ເລືອກປະເພດການລາພັກ / Select leave type</option> -->
+                                                    <option *ngFor="let list of leaveinfo" value="{{list['id']}}"> {{list['laotypeleave']}}</option>
+
+                                                    <!-- <option value="Pending">ANNUAL LEAVE</option>
+                                                    <option value="Active">Block Leave</option>
+                                                    <option value="Entered">EMERGENCY LEAVE</option>
+                                                    <option value="Terminated">SICK LEAVE</option>
+                                                    <option value="Expired">OTHER LEAVE</option>
+                                                    <option value="Expired">ລາເກີດລູກ/Maternity</option>
+                                                    <option value="Expired">ລາເມຍເກີດລູກ/Paternity</option>
+                                                    <option value="Expired">ລາສ່ວນຕົວ/Personal </option>
+                                                    <option value="Expired">OTHER LEAVE</option> -->
+                                                </select>
+                                                <br/>
+                                                <h4 class="sub-title">ຈຳນວນມື້ລາພັກ / Leave Amount .ຖ້າລາພັກເຄິ່ງມື ໃຫ້ເລືອກ 0.5 / if you want to leave helf day please input 0.5</h4>
+                                                <ng-container *ngIf="form_leave_select == 2 || form_leave_select == 6 || form_leave_select == 7; else templateName">
+                                                    <!-- <input class="form-control form-control-lg" type="number"  
+                                                    placeholder="ຈຳນວນມື້ລາພັກ / Leave Amount "    [(ngModel)]="form_N_day" disabled
+                                                    /> -->
+
+
+                                                    <select class="form-control"  [(ngModel)]="form_N_day"  disabled>
+                                                        <!-- <option selected value="">Select your Boss / ເລືອກຫົວຫນ້າຂອງທ່ານ</option> -->
+                                                   
+                                                        <option value="0.5">0.5</option>
+                                                        <option value="1">1</option>
+                                                        <option value="1.5">1.5</option>
+                                                        <option value="2">2</option>
+                                                        <option value="2.5">2.5</option>
+                                                        <option value="3">3</option>
+                                                        <option value="3.5">3.5</option>
+                                                        <option value="4">4</option>
+                                                        <option value="4.5">4.5</option>
+                                                        <option value="5">5</option>
+                                                        <option value="5.5">5.5</option>
+                                                        <option value="6">6</option>
+                                                        <option value="6.5">6.5</option>
+                                                        <option value="7">7</option>
+                                                        <option value="7.5">7.5</option>
+                                                        <option value="8">8</option>
+                                                        <option value="8.5">8.5</option>
+                                                        <option value="9">9</option>
+                                                        <option value="9.5">9.5</option>
+                                                        <option value="10">10</option>
+                                                        <option value="11">11</option>
+                                                        <option value="12">12</option>
+                                                        <option value="13">13</option>
+                                                        <option value="14">14</option>
+                                                        <option value="15">15</option>
+
+                                                        
+                                                    </select>
+
+
+                                                </ng-container>
+
+                                        
+                                                <ng-template #templateName>
+                                                    <!-- <input class="form-control form-control-lg" type="number"  
+                                                    placeholder="ຈຳນວນມື້ລາພັກ / Leave Amount "   [(ngModel)]="form_N_day"
+                                                    /> -->
+                                                    <select class="form-control"  [(ngModel)]="form_N_day" >
+                                                        <!-- <option selected value="">Select your Boss / ເລືອກຫົວຫນ້າຂອງທ່ານ</option> -->
+                                                        <option value="0.5">0.5</option>
+                                                        <option value="1">1</option>
+                                                        <option value="1.5">1.5</option>
+                                                        <option value="2">2</option>
+                                                        <option value="2.5">2.5</option>
+                                                        <option value="3">3</option>
+                                                        <option value="3.5">3.5</option>
+                                                        <option value="4">4</option>
+                                                        <option value="4.5">4.5</option>
+                                                        <option value="5">5</option>
+                                                        <option value="5.5">5.5</option>
+                                                        <option value="6">6</option>
+                                                        <option value="6.5">6.5</option>
+                                                        <option value="7">7</option>
+                                                        <option value="7.5">7.5</option>
+                                                        <option value="8">8</option>
+                                                        <option value="8.5">8.5</option>
+                                                        <option value="9">9</option>
+                                                        <option value="9.5">9.5</option>
+                                                        <option value="10">10</option>
+                                                        <option value="11">11</option>
+                                                        <option value="12">12</option>
+                                                        <option value="13">13</option>
+                                                        <option value="14">14</option>
+                                                        <option value="15">15</option>
+                                                    </select>
+                                                </ng-template>
+                                                <!-- <input class="form-control form-control-lg" type="number"  
+                                                placeholder="ຈຳນວນມື້ລາພັກ / Leave Amount "  [(ngModel)]="form_N_day"
+                                                /> -->
+                                                <ng-container *ngIf="(form_leave_select == 4 || form_leave_select == 5)  && form_N_day >= 2 ">
+                                                    <!-- <input class="form-control form-control-lg" type="number"  
+                                                    placeholder="ຈຳນວນມື້ລາພັກ / Leave Amount "    [(ngModel)]="form_N_day" disabled
+                                                    /> -->
+
+                                                    <br/>
+                                                    <h4 class="sub-title">Upload Docuemnt when sick leave more than 2 days</h4>
+                                                    <!-- <input class="form-control form-control-lg" type="text"  
+                                                    placeholder="UPLOAD " /> -->
+                                                    <!-- <label class="col-sm-2 col-form-label">Upload File</label> -->
+                                                    
+                                                        <input class="form-control" type="file" multiple (change)="selectFiles($event)" />
+                                                    
+                                                        <!-- <button
+                                                        class="btn btn-success"
+                                                        [disabled]="!selectedFiles"
+                                                        (click)="uploadFiles()"
+                                                      >
+                                                        Upload
+                                                      </button> -->
+                                                      <!-- <button class="btn btn-success" (click)="uploadFiles()">
+                                                      Upload
+                                                    </button> -->
+                                                </ng-container>
+                                              
+                                            </div>
+                                        </div>
+                                            <div class="row">
+                                                <div class="col-md-6 col-xl-6 m-b-20">
+                                                    <h6 class="sub-title">ມື້ເລີ່ມລາພັກ / Leave Strat From:</h6> 
+                                                    <input class="form-control"  type="date"  [(ngModel)]="form_N_date_start" />
+                                                   
+                                                </div>
+                                                <div class="col-md-6 col-xl-6 m-b-20">
+                                                    <h5 class="sub-title">ມື້ສິ້ນສຸດລາພັກ / Leave End To:</h5>
+                                                    <input class="form-control" type="date"  [(ngModel)]="form_N_date_end" />
+                                                </div>
+                                            
+                                                 <div class="col-md-6 col-xl-6 m-b-20">
+                                                    <h5 class="sub-title">ມື້ກັບມາເຮັດວຽກ / Coem back to Work Date </h5>
+                                                    <input class="form-control" type="date"  [(ngModel)]="form_N_come_back_date" />
+                                                </div>
+                                                
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xl-12 col-xl-12 m-b-30">
+
+                                                    <h4 class="sub-title"> ເລືອກພະນັກງານທີ່ເຮັດວຽກແທນ / Select staff cover</h4>
+
+                                                    <select class="form-control"  [(ngModel)]="form_N_cover_name" >
+                                                        <!-- <option selected value="">Select your Boss / ເລືອກຫົວຫນ້າຂອງທ່ານ</option> -->
+                                                        
+                                                        <option *ngFor="let list of staff_list" value="{{list['email']}}"> {{list['full_name']}} / {{list['email']}}</option>
+                                                    </select>
+
+                                                    <!-- <br/>
+                                                    <h4 class="sub-title">ຊື່ພະນັກງານທີ່່ເຮັດວຽກແທນ / Duty covered by </h4>
+    
+                                                    <input class="form-control form-control-lg" type="text"  
+                                                    placeholder="ຊື່ພະນັກງານທີ່ເຮັດວຽກແທນ /staff name "  [(ngModel)]="form_N_cover_name" /> -->
+                                                    <br/>
+                                                    <h4 class="sub-title">ຫນ້າວຽກທີ່ເຮັດແທນ / List of duty to be covered</h4>
+    
+                                                    <input class="form-control form-control-lg" type="text"  
+                                                    placeholder="ລາຍລະອຽດຫນ້າວຽກທີ່ເຮັດແທນ / Job detail "  [(ngModel)]="form_N_job_detail" />
+                                                    <br/>
+                                                    <h4 class="sub-title">Select your Head of Dept / ເລືອກຫົວຫນ້າຂອງທ່ານ</h4>
+                                                    <select class="form-control"  [(ngModel)]="form_N_boss_id" >
+                                                        <!-- <option selected value="">Select your Boss / ເລືອກຫົວຫນ້າຂອງທ່ານ</option> -->
+                                                        
+                                                        <option *ngFor="let list of boss_name" value="{{list['staff_id']}}"> {{list['head_fullname']}} / {{list['email']}}</option>
+                                                    </select>
+                                                    <br/>
+                                                    <h4 class="sub-title">ເຫດຜົນການລາພັກ / Reason for take Leave . </h4>
+                                                    <!-- <label class="col-sm-12 col-form-label">ເຫດຜົນການລາພັກ / Reason for take Leave</label> -->
+                                                    
+                                                        <textarea rows="5" cols="5" class="form-control"
+                                                                  placeholder="ສາມາດພິມເປັນພາສາລາວໄດ້ / Lao language also support"  [(ngModel)]="form_N_comment"></textarea>
+                                                
+                                                    <br/>
+                                                    <div class="center">
+                                                      
+                                                            <div class="text-center">
+                                                                
+                                                                <button  class="btn btn-success btn-round center" (click)="submit()" 
+                                                                [disabled]="!form_leave_select || !form_N_date_start || !form_N_date_end || !form_N_come_back_date"  >Submit</button>
+                                                                <!-- <button  class="btn btn-success btn-round center" (click)="submit()" 
+                                                                >Submit</button> -->
+                                                            </div>
+                                                      
+                                                    </div>
+                                                    
+                                                </div>
+
+                                            </div>
+                                           
+                                            
+
+                                           
+                                    </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-xl-4 col-md-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4>Your Leave Balance</h4>
+                                </div>
+
+                                    <div class="col-xl-12 col-md-12">
+                                    <div class="row">
+                                        <div class="col-sm-6 col-xl-12 m-b-30">
+
+                                            
+                                            <table  id="basic-btn" class="table  table-bordered">
+                                                <thead>
+                                                    
+                                                    <tr>
+                                                        <th style="text-align:center;">Leave Type</th>
+                                                        <th style="text-align:center;">Amount</th>
+                                                       
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td style="text-align:center;">Annual Leave</td>
+                                                        <td style="text-align:center;">{{annual_leave}}</td>    
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td style="text-align:center;">Forward Leave</td>
+                                                        <td style="text-align:center;">{{forward_leave}}</td>    
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="text-align:center;">Extra Leave</td>
+                                                        <td style="text-align:center;">{{extra_leave}}</td>    
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="text-align:center;">Sick Leave</td>
+                                                        <td style="text-align:center;">{{sick_leave}}</td>    
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="text-align:center;">Maternity Leave</td>
+                                                        <td style="text-align:center;">{{maternity_Leave}}</td>    
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="text-align:center;">maternity leave twin</td>
+                                                        <td style="text-align:center;">{{maternity_leave_twin_kid}}</td>    
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="text-align:center;">Paternity leave</td>
+                                                        <td style="text-align:center;">{{paternity_leave}}</td>    
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="text-align:center;">Personal leave</td>
+                                                        <td style="text-align:center;">{{personal_leave}}</td>    
+                                                    </tr>
+
+                    
+                                                </tbody>
+                                            
+                                            </table>
+                                        </div>
+                                        
+                                    </div>
+                                    </div>
+
+
+
+    
+                               
+                            </div>      
+                        </div>
+                 
+
+                    </div>
+                </div>  
+                <!-- Page body start -->
+      
+            <!-- Page body end -->
+        </div>
+    </div>
+    <!-- Main-body end -->
+   
+</div>
+</div>

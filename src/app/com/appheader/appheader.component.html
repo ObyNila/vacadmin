@@ -1,0 +1,63 @@
+<nav class="pcoded-navbar">
+    <div class="pcoded-inner-navbar main-menu">
+        <div class="pcoded-navigatio-lavel">Admin Navigation</div>
+
+     
+
+             <!-- <div *ngIf="user_role == 1 || user_role == 2 "> -->
+                
+
+        <ul class="pcoded-item pcoded-left-item">
+
+
+     
+
+            <li class="">
+                <a routerLink="home">
+                    <span class="pcoded-micon"><i class="feather icon-home"></i></span>
+                    <span class="pcoded-mtext">Dashboard</span>
+                </a>
+            </li>
+            <li class="">
+                <a routerLink="leaveform">
+                    <span class="pcoded-micon"><i class="feather icon-aperture rotate-refresh"></i></span>
+                    <span class="pcoded-mtext">form</span>
+                </a>
+            </li>
+            <li class="">
+                <a routerLink="dashboard">
+                    <span class="pcoded-micon"><i class="feather icon-gitlab"></i></span>
+                    <span class="pcoded-mtext">balance</span>
+                </a>
+            </li>
+        
+          
+        </ul>
+
+
+    
+
+
+
+        <div class="pcoded-navigatio-lavel"></div>
+        <ul class="pcoded-item pcoded-left-item">
+            <!-- <li class=" ">
+                <a routerLink="login">
+                    <span class="pcoded-micon"><i class="feather icon-home"></i></span>
+                    <span class="pcoded-mtext" >login</span>
+                </a>
+            </li> -->
+          
+            <li class=" ">
+                <a (click)="logout_info()">
+                    <!-- <a (click)="logout()"> -->
+                    <span class="pcoded-micon"><i class="feather icon-power"></i></span>
+                    <span class="pcoded-mtext" >Log Out</span>
+                </a>
+            </li>
+          
+        </ul>
+
+      
+    </div>
+</nav>
