@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "eleave"
+    }
+  },
+  "defaultProject": "eleave",
+  "cli": {
+    "analytics": "86b6fcb3-cabd-4075-a7fa-3b6bc0299b66"
+  }
 }
