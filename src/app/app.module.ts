@@ -33,15 +33,11 @@ const appRoutes: Route[] = [
   // { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'home', component: HomeComponent},
-  { path: 'dashboard', component: DashboardComponent},
+  // { path: 'dashboard', component: DashboardComponent},
   { path: 'leaveform', component: LeaveformComponent},
 
   // { path: 'login', component: LoginComponent},
-  {path: 'login', component: LoginComponent,
-  // canActivate: [
-  //   MsalGuard
-  // ]
-  },
+  {path: 'login', component: LoginComponent},
   { path: '**', redirectTo: '/login' }
 ];
 
@@ -51,12 +47,12 @@ const appRoutes: Route[] = [
     AppheaderComponent,
     HomeComponent,
     LeaveformComponent,
-    LoginComponent,
-    DashboardComponent,
+    LoginComponent
+    // DashboardComponent,
 
-  
 
- 
+
+
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
@@ -67,7 +63,7 @@ const appRoutes: Route[] = [
     ReactiveFormsModule,
     NgbModule,
     Ng2SmartTableModule,
- 
+
 
   ],
   providers:[BnNgIdleService],

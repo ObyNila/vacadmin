@@ -45,8 +45,8 @@ export class LoginComponent implements OnInit {
 
       // channelArray: Array<string> = ['one', 'two', 'three'];
 
-      // SuperAdmin = ['Athanaml@maruhanjapanbanklao.com'] 
-      // adminEmail = ['Athanaml@maruhanjapanbanklao.com','2'] 
+      // SuperAdmin = ['Athanaml@maruhanjapanbanklao.com']
+      // adminEmail = ['Athanaml@maruhanjapanbanklao.com','2']
 
 
   ngOnInit(){
@@ -55,12 +55,12 @@ export class LoginComponent implements OnInit {
     // this.broadcastService.subscribe('msal:loginSuccess', () => {
     //   this.checkoutAccount();
     // });
-  
+
     // if (this.loggedIn) {
     //   this.profile = this.authService.getAccount();
     // }
 
-   
+
   }
 
 
@@ -83,7 +83,7 @@ console.log('12121')
   login_web(){
     console.log("test")
     const data = {
-      'user_name': this.user_name, 
+      'user_name': this.user_name,
       'password': this.password
     };
 // console.log(this.profile.userName) //email : Athanaml@maruhanjapanbanklao.com
@@ -92,7 +92,7 @@ console.log('12121')
 // console.log(this.profile.userName)
 
 
-  
+
       this.rest.login(data).subscribe(result => {
         console.log(result);
         if (result.status === 'successful'){
@@ -122,18 +122,18 @@ console.log('12121')
 
 
 
-  login_manual(): void {  
+  login_manual(): void {
 console.log(this.user_name)
 
 console.log("test")
     const data = {
-      'user_name': this.user_name, 
+      'user_name': this.user_name,
       'password': this.password
     };
 
     if (this.test === 'successful'){
 
-      this.router.navigate(['/leaveform']).then(() => {
+      this.router.navigate(['/home']).then(() => {
         window.location.reload();
       });
     }else{
@@ -164,7 +164,7 @@ console.log("test")
       //     )
       //   }
       // });
-  } 
+  }
 
 
 }
