@@ -31,14 +31,14 @@ import { MsalGuard } from '@azure/msal-angular';
 
 const appRoutes: Route[] = [
   // { path: '', redirectTo: '/login', pathMatch: 'full' },
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'home', component: HomeComponent},
   { path: 'dashboard', component: DashboardComponent},
   { path: 'leaveform', component: LeaveformComponent},
 
   // { path: 'login', component: LoginComponent},
   {path: 'login', component: LoginComponent},
-  { path: '**', redirectTo: 'login' }
+  // { path: '**', redirectTo: '/login' }
 ];
 
 @NgModule({
